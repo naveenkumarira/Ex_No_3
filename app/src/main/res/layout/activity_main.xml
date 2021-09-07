@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_input_text_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter the first number"
+        tools:ignore="TextFields,HardcodedText">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_input_text_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_input_text_one"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Enter the second number"
+        tools:ignore="TextFields,HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_input_text_two"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="ADD"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="SUB"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sub"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="MUL"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_mul"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="DIV"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_div"
+        android:textSize="30sp"
+        tools:text="3+3=6"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:text="Clear"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>
