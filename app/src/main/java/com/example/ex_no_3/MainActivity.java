@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText inputTextOne;
     EditText inputTextTwo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int add = getInputOne() + getInputTwo();
-                outputText.setText(getInputOne() + ""+ "+" + getInputTwo() +"="+ add);
+                outputText.setText(getInputOne() + "+" + getInputTwo() + "=" + add);
             }
         });
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int sub = getInputOne() - getInputTwo();
-                outputText.setText(getInputOne() + ""+ "-" + getInputTwo() +"="+ sub);
+                outputText.setText(getInputOne() + "-" + getInputTwo() + "=" + sub);
             }
         });
 
@@ -46,15 +48,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int mul = getInputOne() * getInputTwo();
-                outputText.setText(getInputOne() + ""+ "*" + getInputTwo() +"="+ mul);
+                outputText.setText(getInputOne() + "*" + getInputTwo() + "=" + mul);
             }
         });
 
         divButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int div = getInputOne() * getInputTwo();
-                outputText.setText(getInputOne() + ""+ "/" + getInputTwo() +"="+ div);            }
+                if (getInputTwo() == 0) {
+                    Toast.makeText(getBaseContext(), getInputOne() + " can't divided by zero", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int div = getInputOne() / getInputTwo();
+                outputText.setText(getInputOne() + "/" + getInputTwo() + "=" + div);
+            }
         });
 
         clearButton.setOnClickListener(new View.OnClickListener() {
